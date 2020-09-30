@@ -1,0 +1,101 @@
+{
+
+	"_version": "1.12.0",
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+
+		"supportedThemes": ["sap_bluecrystal", "sap_belize"],
+		"icons": {
+			"icon": "sap-icon://accept"
+		}
+	},
+
+	"sap.ui5": {
+		"_version": "1.2.0",
+		"dependencies": {
+			"minUI5Version": "1.44",
+			"libs": {
+				"sap.m": {
+					"minVersion": "1.44"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.44"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"":{
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/mockData/exercise.json"				
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel"
+				
+			}
+		},
+		"rootView": {
+			"viewName": "second.fiori.view.App",
+			"id": "idMainAppView",
+			"type": "XML"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "second.fiori.view",
+				"viewType": "XML",
+				"controlId": "idApp"
+			},
+			"routes": [
+				{
+				  "pattern": "",
+				  "name": "harry",
+					"target":["donald"]			  
+				},
+				{
+					"pattern": "fruits",
+					"name": "simposon",
+					"target":["trump"]					
+				}
+				],
+				"targets": {
+					"donald":{
+						"viewName": "View1",
+						"viewId": "idView1",
+						"controlAggregation": "masterPages"
+						
+					},
+					"trump":{
+						"viewName": "View2",
+						"viewId": "idView2",
+						"controlAggregation": "detailPages"
+					}
+				}
+		}
+	},
+
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "second.fiori",  
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDesc}}",
+		"tags": {
+			"keywords": ["{{tag1}}"]
+		},
+		"ach": "FIN-AR"
+	}
+
+}

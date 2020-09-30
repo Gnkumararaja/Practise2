@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MY Another App</title>
+		<script src = "https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-libs = "sap.m, sap.ui.layout, sap.ui.table" 
+		data-sap-ui-theme = "sap_bluecrystal"
+		data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-resourceroots = '{
+		"second.fiori" : "./"
+		}'>
+			
+		<link rel="stylesheet" type="text/css" href="css/myStyle.css">
+		</script>
+		
+		<script>
+			/*var oName = new sap.ui.view ( "idMyXml",{
+				viewName: "second.fiori.view.App",
+				type : sap.ui.core.mvc.ViewType.XML
+			});
+			
+			var oView1 = new sap.ui.view("idView1",{
+				viewName: "second.fiori.view.View1",
+				type:sap.ui.core.mvc.ViewType.XML
+			});
+	
+			var oView2 = new sap.ui.view("idView2",{
+				viewName: "second.fiori.view.View2",
+				type: sap.ui.core.mvc.ViewType.XML
+			});
+			
+			var oApp= oName.byId("idApp");
+			oApp.addMasterPage(oView1).addDetailPage(oView2); 
+			oName.placeAt("content");*/
+			sap.ui.getCore().attachInit(function(){
+			var ComponentContainer = new sap.ui.core.ComponentContainer({
+				name: "second.fiori"
+			});	
+			ComponentContainer.placeAt("content");
+			});
+		</script>
+	</head>
+	<body class="sapUiBody">
+	 	<div id="content"></div>
+	</body>
+</html>

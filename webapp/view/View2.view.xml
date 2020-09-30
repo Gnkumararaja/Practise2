@@ -1,0 +1,95 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="second.fiori.controller.View2">
+				<Page title="View2">
+					
+				<content>
+					<ObjectHeader id="idHeader" intro="{healthBenifit}" title="{fName}" icon="{fimage}" number="{price}" numberUnit="{currency}"/>
+				<IconTabBar>
+					<items>
+					<IconTabFilter text="Addition Info" key="idAdditional" icon="sap-icon://tags" iconColor="Negative">
+					<content>
+				 <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="form0">
+				        <sap.ui.layout.form:content>
+				            <core:Title text="Additional Data" id="title0"/>
+				            <Label text="Type" id="label0"/>
+				            <Text xmlns="sap.m" id="text11" text="{type}"/>
+				            <Label text="Price:" id="label1"/>
+				            <Text xmlns="sap.m" text="{price}" id="text12"/></sap.ui.layout.form:content>
+				    </sap.ui.layout.form:SimpleForm>		
+					</content>
+					</IconTabFilter>
+					<IconTabFilter text="Suppliers" key="idSupplier" icon="sap-icon://supplier" iconColor="Positive">
+					    <content>
+					        <Table items="{/supplier}" noDataText="Drop column list items here and columns in the area above" id="subTable">
+					            <items>
+					                <ColumnListItem>
+					                    <cells>
+					                        <Text text="{sName}"/><Input xmlns="sap.m" value="{sCity}" id="input0" showValueHelp="true" valueHelpRequest="onValueHelp"/>
+					                        <Text text="{sinceWhen}"/>
+					                        <ObjectStatus text="{status}" state="{                              path: 'status',                              formatter: '.formatter.setStatus'                              }"/></cells>
+					                </ColumnListItem>
+					            </items>
+					            <columns>
+					                <Column id="column0">
+					                    <header>
+					                        <Label text="Name" id="label0_1574950171104"/>
+					                    </header>
+					                </Column>
+					                <Column id="column1">
+					                    <header>
+					                        <Label text="City" id="label1_1574950171105"/>
+					                    </header>
+					                </Column>
+					                <Column id="column2" minScreenWidth="Tablet">
+					                    <header>
+					                        <Label text="Since When" id="label2"/>
+					                    </header>
+					                </Column>
+					                <Column id="column0_1574951080671" demandPopin="true" minScreenWidth="Tablet" popinDisplay="WithoutHeader">
+					                    <header>
+					                        <Text text="Statusss" id="text10"/>
+					                    </header>
+					                </Column></columns></Table>
+					    </content>
+					</IconTabFilter>
+					<IconTabFilter text="Select City" key="idCity" icon="sap-icon://home">
+					    <content>
+					        <Select items="{/city}" id="idCity1">
+					            <items>
+					                <core:Item text="{cName}"/>
+					                </items>
+					            
+					        </Select>
+					        
+					        <ComboBox items="{/city}" id="idCity2">
+					            <items>
+					                <core:Item text="{cName}"/>
+					                </items>
+					            
+					        </ComboBox>
+					        
+					        <MultiComboBox items="{/city}" id="idCity3">
+					            <items>
+					                <core:Item text="{cName}"/>
+					                </items>
+					            
+					        </MultiComboBox>
+					    </content>
+					</IconTabFilter>
+					<IconTabFilter text="Address" count="10" icon="sap-icon://address-book" iconColor="Positive" id="filter3">
+					<core:Fragment fragmentName="second.fiori.fragments.AddressInfo"
+					type="XML"></core:Fragment>
+					<core:Fragment fragmentName="second.fiori.fragments.AddressInfo"
+					type="XML"></core:Fragment>
+					</IconTabFilter>
+					</items>
+				</IconTabBar>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Button text="Approve" type="Accept" press="onApprove"/>
+						<Button text="Reject" type="Reject" press="onReject"/>
+					</Toolbar>
+				</footer>
+			</Page>
+</mvc:View>
